@@ -1,74 +1,78 @@
-# IMT Calculator in Go
+# Lab-02: Introduction to Variables, Constants, and IMT Calculation in Go
 
 ## Overview
-This is a simple Go program that calculates the **Body Mass Index (IMT)** based on a user's height and weight. It demonstrates variable declaration, type conversion, and basic mathematical operations using Go's built-in `math` package.
+In **Lab-02**, we explore how to declare and use **variables**, **constants**, and perform **calculations** in Go. The goal of this lab is to gain a deep understanding of Go's variable types while building a simple **IMT (Index of Mass of the Body) calculator**.
 
-## Features
-- Declares and initializes variables using the `var` keyword.
-- Demonstrates type conversion.
-- Uses the `math.Pow()` function to calculate the square of a number.
-- Outputs the calculated IMT using `fmt.Printf()`.
+## Learning Objectives
+By the end of this lab, you will:
+- Learn how to declare **variables** using `var` and `:=`.
+- Understand how to use **constants** with `const`.
+- Explore different **data types** in Go.
+- Perform calculations using **math functions**.
+- Accept **user input** and process it in a Go program.
 
-## Code
-```go
-package main
-
-import (
-	"fmt"
-	"math"
-)
-
-func main() {
-	// Declare and initialize variables:
-	var userHeight float64 = 1.7
-	var userWeight float64 = 100
-
-	// Calculate IMT using the formula: weight / (height^2)
-	var IMT = userWeight / math.Pow(userHeight, 2)
-
-	// Print the result
-	fmt.Printf("IMT is : %f", IMT)
-}
+## Folder Structure
+```
+lab-02/
+├── basics/           # Learning how to use variables and constants
+│   ├── 01-main.go    # Declaring variables explicitly
+│   ├── 02-main.go    # Using constants and shorthand variable declaration
+│   ├── README.md     # Documentation for basics folder
+│
+├── final-imt-app/    # The complete IMT calculator
+│   ├── main.go       # Final version of IMT calculator
+│   ├── README.md     # Documentation for final project
+│
+└── README.md         # Documentation for the entire lab
 ```
 
-## Installation and Running
-### Prerequisites
-- Go installed on your system ([Download Go](https://go.dev/dl/))
+## What We Will Learn
+### 1. Basics of Variables and Constants (Folder: `basics/`)
+- **01-main.go**: Learn how to declare variables explicitly and perform calculations.
+- **02-main.go**: Learn how to declare constants and use shorthand notation (`:=`).
+- Understanding **data types** and **type conversions**.
 
-### Running the program
-1. Save the code in a file named `main.go`.
-2. Open a terminal and navigate to the directory containing `main.go`.
-3. Run the command:
-   ```sh
-   go run main.go
-   ```
-4. The program will output the IMT value.
+### 2. Building a Complete Application (Folder: `final-imt-app/`)
+- Taking **user input** using `fmt.Scan()`.
+- Implementing the **IMT formula** (`weight / height²`).
+- Displaying results with `fmt.Printf()`.
+- Compiling and running a **standalone Go application**.
 
-## Go Variable Types
-The program also provides a reference for Go's variable types:
+## Running the Programs
+### Running Basics Code
+To compile and run the basics programs:
+```sh
+# Navigate to the basics directory
+cd basics
 
-| Type        | Description |
-|------------|-------------|
-| `bool`     | `true`, `false` |
-| `string`   | String values like `"Hello, World!"` |
-| `int`      | Integer values like `42` |
-| `int8`     | -128 to 127 |
-| `int16`    | -32,768 to 32,767 |
-| `int32`    | -2,147,483,648 to 2,147,483,647 |
-| `int64`    | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
-| `uint`     | 0 to 18,446,744,073,709,551,615 |
-| `uint8`    | 0 to 255 |
-| `uint16`   | 0 to 65,535 |
-| `uint32`   | 0 to 4,294,967,295 |
-| `uint64`   | 0 to 18,446,744,073,709,551,615 |
-| `uintptr`  | Unsigned integer storing pointer values |
-| `byte`     | Alias for `uint8` |
-| `rune`     | Alias for `int32` (Unicode character representation) |
-| `float32`  | 32-bit floating-point numbers |
-| `float64`  | 64-bit floating-point numbers |
-| `complex64`| Complex numbers with `float32` real and imaginary parts |
-| `complex128` | Complex numbers with `float64` real and imaginary parts |
+# Build and run 01-main.go
+go build -o 01_binary 01-main.go
+./01_binary
 
-## License
-This project is open-source and available under the MIT License.
+# Build and run 02-main.go
+go build -o 02_binary 02-main.go
+./02_binary
+```
 
+### Running Final IMT Application
+To run the full IMT application:
+```sh
+# Navigate to the final-imt-app directory
+cd final-imt-app
+
+# Initialize Go module (only needed once per project)
+go mod init final-imt-app
+
+# Build and run the application
+go build -o final_binary main.go
+./final_binary
+```
+
+## Summary
+In **Lab-02**, we:
+- Learned **variable and constant declaration** in Go.
+- Explored **data types** and **type conversion**.
+- Built a real-world **IMT calculator**.
+- Used **user input** and **math functions** in Go.
+
+This lab provides a solid foundation for working with **variables, constants, and basic operations** in Go. Next, we will explore **control structures** (if-else, loops) to add more logic to our programs!

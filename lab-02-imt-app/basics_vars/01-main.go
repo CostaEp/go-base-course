@@ -47,3 +47,8 @@ func main() {
 // complex64 : complex numbers which have float32 real and imaginary parts
 // complex128 : complex numbers with float64 real and imaginary parts
 //-------------------------------
+
+//for build the code run the command below:
+//go build -o 01_binary 01-main.go
+//becouse we few main fail in the same directory we need to specify the name of the file we want to build
+//we cant mod init because we use at the same project directory few main files
